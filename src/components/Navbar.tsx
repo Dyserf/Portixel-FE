@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="w-full centerUtil justify-between py-5 px-[82px]">
+    <nav className="w-full centerUtil justify-between py-5 px-[82px] border-t-[20px] border-primary">
       <Link href="">
         <Image
           alt="Portixel logo"
