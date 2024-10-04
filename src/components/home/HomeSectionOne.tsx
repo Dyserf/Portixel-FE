@@ -1,6 +1,6 @@
 const HomeSectionOne = () => {
   return (
-    <div className="w-full py-[121px] centerUtil bg-[url('/icon/grid.svg')]">
+    <div className="w-full py-[121px] px-4 centerUtil bg-[url('/icon/grid.svg')]">
       <div className="max-w-[896px] centerUtil flex-col gap-[23px] text-center">
         <h2 className="text-[64px] font-bold">
           AI-powered portfolio creation and workflow ease
