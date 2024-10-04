@@ -26,3 +26,11 @@ body {
     align-items: center;
   }
 }
+
+.HomePortfolioCard {
+  background: linear-gradient(
+    360deg,
+    rgba(25, 24, 24, 0.53) 0%,
+    rgba(127, 122, 122, 0.06) 100%
+  );
+}

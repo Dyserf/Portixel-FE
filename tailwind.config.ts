@@ -15,6 +15,7 @@ const config: Config = {
         secondary: "#AE66FF",
         textSecondary: "#C2C0C4",
         bgSecondary: "#191818",
+        bgCard: "#2C2C2C",
         stroke: "#444444",
       },
     },
