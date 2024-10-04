@@ -34,3 +34,10 @@ body {
     rgba(127, 122, 122, 0.06) 100%
   );
 }
+
+.withEase {
+  background: linear-gradient(to right top, #4c6fff, #ae66ff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
