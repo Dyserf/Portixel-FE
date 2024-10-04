@@ -23,7 +23,7 @@ const HomeSectionFive = () => {
             with every project!
           </p>
 
-          <button className="p-3 w-full rounded-[10px] bg-white text-black">
+          <button className="p-3 w-full rounded-[10px] bg-white text-black font-bold">
             Try Now
           </button>
         </div>

@@ -43,3 +43,16 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+.foundersNote {
+  animation: noteAnim 0.2s linear;
+}
+
+@keyframes noteAnim {
+  from {
+    scale: 0.7;
+  }
+  to {
+    scale: 1;
+  }
+}
