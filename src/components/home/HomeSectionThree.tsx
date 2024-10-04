@@ -13,7 +13,7 @@ const HomeSectionThree = () => {
           <div
             key={card.title}
             className="w-full max-w-[314px] h-full rounded-xl py-[27px] px-[15px] text-center
-            font-normal text-lg flex flex-col HomePortfolioCard border border-bgCard "
+            font-normal text-lg flex flex-col cardGrain border border-bgCard "
           >
             <p className="">{card.title}</p>
             <p className="mt-[14px] mb-6 text-textSecondary text-sm">
