@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { harmonyOs } from "@/utils/fonts";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Portixel",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${harmonyOs.className} antialiased `}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
