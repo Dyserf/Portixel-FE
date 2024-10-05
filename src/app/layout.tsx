@@ -3,6 +3,7 @@ import "./globals.css";
 import { harmonyOs } from "@/utils/fonts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WaitListProvider from "@/utils/Providers";
 
 export const metadata: Metadata = {
   title: "Portixel",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${harmonyOs.className} antialiased `}>
-        <Navbar />
-        {children}
-        <Footer />
+        <WaitListProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </WaitListProvider>
       </body>
     </html>
   );

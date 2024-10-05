@@ -1,9 +1,15 @@
 "use client";
+import { WaitListContext } from "@/utils/Providers";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 const FoundersNote = () => {
   const [display, setDisplay] = useState(false);
+  const waitlist = useContext(WaitListContext);
+
+  const openWaitList = () => {
+    waitlist?.setWaitListState(true);
+  };
 
   return (
     <div
@@ -57,7 +63,10 @@ const FoundersNote = () => {
           </div>
         </div>
 
-        <button className="bg-white text-black font-bold p-3 rounded-[10px]">
+        <button
+          className="bg-white text-black font-bold p-3 rounded-[10px]"
+          onClick={openWaitList}
+        >
           Join our waitlist
         </button>
       </div>

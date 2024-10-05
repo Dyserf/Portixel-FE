@@ -1,6 +1,14 @@
+import { WaitListContext } from "@/utils/Providers";
 import Image from "next/image";
+import { useContext } from "react";
 
 const HomeSectionFive = () => {
+  const waitlist = useContext(WaitListContext);
+
+  const openWaitList = () => {
+    waitlist?.setWaitListState(true);
+  };
+
   return (
     <div className="py-14 px-4 relative overflow-hidden centerUtil bg-black">
       <video autoPlay muted loop className="absolute top-0 left-0 opacity-40">
@@ -23,7 +31,10 @@ const HomeSectionFive = () => {
             with every project!
           </p>
 
-          <button className="p-3 w-full rounded-[10px] bg-white text-black font-bold">
+          <button
+            className="p-3 w-full rounded-[10px] bg-white text-black font-bold"
+            onClick={openWaitList}
+          >
             Try Now
           </button>
         </div>

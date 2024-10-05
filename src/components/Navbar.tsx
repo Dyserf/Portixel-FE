@@ -1,7 +1,16 @@
+"use client";
+import { WaitListContext } from "@/utils/Providers";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const waitlist = useContext(WaitListContext);
+
+  const openWaitList = () => {
+    waitlist?.setWaitListState(true);
+  };
+
   return (
     <nav className="w-full centerUtil justify-between py-5 px-[82px] border-t-[20px] border-primary">
       <Link href="">
@@ -24,7 +33,10 @@ const Navbar = () => {
           </Link>
         ))}
 
-        <button className="px-[22px] py-[10px] rounded-[10px] bg-white text-black">
+        <button
+          className="px-[22px] py-[10px] rounded-[10px] bg-white text-black"
+          onClick={openWaitList}
+        >
           Try Now
         </button>
       </div>

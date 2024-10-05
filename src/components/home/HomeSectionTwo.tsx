@@ -28,7 +28,7 @@ const HomeSectionTwo = () => {
 
       <div
         className="p-[3px] rounded-[10px] bg-gradient-to-bl from-secondary to-primary
-      w-full max-w-[558px]"
+      w-full max-w-[625px]"
       >
         <form
           onSubmit={handleSubmit}
@@ -82,9 +82,24 @@ const CustomiseList = [
 
 export const PreName = [
   {
+    title: "None",
+  },
+  {
+    title: "Hi, I'm",
+  },
+  {
     title: "Hello, I'm",
   },
   {
-    title: "Call me",
+    title: "Welcome, I'm",
+  },
+  {
+    title: "Hey, I'm",
+  },
+  {
+    title: "My name is",
+  },
+  {
+    title: "Hello, my name is",
   },
 ];
