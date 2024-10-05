@@ -2,9 +2,9 @@
 import TabState from "@/utils/TabState";
 import React, { useContext } from "react";
 import { FormEvent, useState } from "react";
-import WaitListEmail from "./waitlist/WaitListEmail";
-import WaitListWallet from "./waitlist/WaitListWallet";
-import WaitListSuccess from "./waitlist/WaitListSuccess";
+import WaitListEmail from "./WaitListEmail";
+import WaitListWallet from "./WaitListWallet";
+import WaitListSuccess from "./WaitListSuccess";
 import { WaitListContext } from "@/utils/Providers";
 
 const WaitList = () => {
@@ -52,7 +52,7 @@ const WaitList = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 centerUtil h-screen w-full
+      className="fixed top-0 left-0 centerUtil min-h-screen h-full w-full
     backdrop-blur-[15px] bg-[#010101E5]"
       onClick={closeWaitList}
     >

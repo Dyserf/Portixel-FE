@@ -6,7 +6,7 @@ import HomeSectionOne from "@/components/home/HomeSectionOne";
 import HomeSectionSix from "@/components/home/HomeSectionSix";
 import HomeSectionThree from "@/components/home/HomeSectionThree";
 import HomeSectionTwo from "@/components/home/HomeSectionTwo";
-import WaitList from "@/components/home/WaitList";
+import WaitList from "@/components/home/waitlist/WaitList";
 import { WaitListContext } from "@/utils/Providers";
 import { useContext } from "react";
 

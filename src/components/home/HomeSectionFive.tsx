@@ -16,16 +16,19 @@ const HomeSectionFive = () => {
       </video>
 
       <div
-        className="py-20 px-[106px] rounded-[20px] border border-bgCard
+        className="py-20 px-[32px] rounded-[20px] border border-bgCard
        bg-[#19181887] backdrop-blur-[50px] centerUtil gap-[98px]
-       w-full max-w-[1278px] flex-wrap
+       w-full max-w-[1278px] max-[1000px]:gap-[52px] max-[850px]:items-start
        "
       >
         <div className="max-w-[469px]">
-          <p className="font-bold text-5xl">
+          <p className="font-bold text-5xl max-[850px]:text-2xl">
             Ready to level up your design game?
           </p>
-          <p className="font-normal text-base text-textSecondary mt-[30px] mb-6">
+          <p
+            className="font-normal text-base text-textSecondary mt-[30px] mb-6
+          max-[850px]:text-sm"
+          >
             Let Portixel handle the details while you focus on what you do best:
             creating. Start building your portfolio today and make an impact
             with every project!
@@ -39,7 +42,7 @@ const HomeSectionFive = () => {
           </button>
         </div>
 
-        <div className="flex flex-col items-start gap-[30px]">
+        <div className="flex flex-col items-start gap-[30px] max-[1000px]:w-full">
           {Points.map((point) => (
             <div key={point.title} className="centerUtil gap-5">
               <div className="bg-gradient-to-bl from-secondary to-primary p-[3px] rounded-[10px]">
@@ -49,13 +52,15 @@ const HomeSectionFive = () => {
                     height={30}
                     width={30}
                     src={point.img}
-                    className=""
+                    className="max-[850px]:w-5 max-[850px]:h-5"
                   />
                 </div>
               </div>
 
               <div className="">
-                <p className="text-xl font-bold">{point.title}</p>
+                <p className="text-xl font-bold max-[850px]:font-base">
+                  {point.title}
+                </p>
                 <p className="text-textSecondary text-sm font-normal mt-[5px]">
                   {point.title}
                 </p>

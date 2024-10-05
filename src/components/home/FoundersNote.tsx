@@ -17,7 +17,7 @@ const FoundersNote = () => {
     gap-3"
     >
       <div
-        className="fixed top-0 left-0 h-screen w-full z-0 backdrop-blur-md"
+        className="fixed top-0 left-0 min-h-screen h-full w-full z-0 backdrop-blur-md"
         style={{ display: display ? "block" : "none" }}
         onClick={() => setDisplay(false)}
       ></div>

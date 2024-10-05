@@ -12,7 +12,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full centerUtil justify-between py-5 px-[82px] border-t-[20px] border-primary">
+    <nav
+      className="w-full centerUtil justify-between py-5 px-[82px] border-t-[20px]
+     border-primary max-[850px]:px-[42px] max-[400px]:px-[21px] max"
+    >
       <Link href="">
         <Image
           alt="Portixel logo"
@@ -22,7 +25,9 @@ const Navbar = () => {
         />
       </Link>
 
-      <div className="centerUtil gap-4">
+      <div className="block flex-1"></div>
+
+      <div className="centerUtil gap-4 block max-[850px]:hidden">
         {Links.map((link) => (
           <Link
             key={link.title}
@@ -40,6 +45,10 @@ const Navbar = () => {
           Try Now
         </button>
       </div>
+
+      <button className="p-1 rounded-[5px] hidden max-[850px]:block">
+        <Image alt="Menu" height={40} width={40} src="/icon/burger.svg" />
+      </button>
     </nav>
   );
 };

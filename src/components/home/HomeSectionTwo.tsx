@@ -20,7 +20,7 @@ const HomeSectionTwo = () => {
               >
                 {index + 1}
               </span>
-              <p className="">{list.title}</p>
+              <p className="text-base font-medium">{list.title}</p>
             </div>
           ))}
         </div>
@@ -33,7 +33,7 @@ const HomeSectionTwo = () => {
         <form
           onSubmit={handleSubmit}
           className="bg-bgSecondary py-4 px-[21px] centerUtil rounded-[7px] gap-[5px]
-          flex-wrap gap-y-2"
+           gap-y-2"
         >
           <select className="bg-transparent p-1">
             {PreName.map((pre) => (

@@ -19,6 +19,8 @@ const Footer = () => {
         </p>
       </div>
 
+      <div className="flex-1 block"></div>
+
       <p className="text-sm">Terms and Conditions</p>
     </footer>
   );
