@@ -2,9 +2,11 @@
 import { WaitListContext } from "@/utils/Providers";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
+  const [displaySidebar, setDisplaySidebar] = useState(false);
   const waitlist = useContext(WaitListContext);
 
   const openWaitList = () => {
@@ -14,7 +16,7 @@ const Navbar = () => {
   return (
     <nav
       className="w-full centerUtil justify-between py-5 px-[82px] border-t-[20px]
-     border-primary max-[850px]:px-[42px] max-[400px]:px-[21px] max"
+     border-primary max-[850px]:px-[42px] max-[400px]:px-[21px] max-[450px]:border-t-[10px]"
     >
       <Link href="">
         <Image
@@ -39,7 +41,7 @@ const Navbar = () => {
         ))}
 
         <button
-          className="px-[22px] py-[10px] rounded-[10px] bg-white text-black"
+          className="px-[22px] py-[10px] rounded-[10px] bg-white text-black font-bold"
           onClick={openWaitList}
         >
           Try Now
@@ -48,17 +50,21 @@ const Navbar = () => {
 
       <button
         className="p-1 rounded-[5px] hidden max-[850px]:block"
-        onClick={() => {}}
+        onClick={() => {
+          setDisplaySidebar(true);
+        }}
       >
         <Image alt="Menu" height={40} width={40} src="/icon/burger.svg" />
       </button>
+
+      {displaySidebar && <Sidebar setDisplaySideBar={setDisplaySidebar} />}
     </nav>
   );
 };
 
 export default Navbar;
 
-const Links = [
+export const Links = [
   {
     title: "Home",
     url: "",

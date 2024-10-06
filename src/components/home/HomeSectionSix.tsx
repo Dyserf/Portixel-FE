@@ -5,7 +5,8 @@ const HomeSectionSix = () => {
   return (
     <div
       className="centerUtil flex-col py-[47px] gap-[30px] bg-[url('/icon/grid.svg')]
-    border-t-[20px] border-b-[20px] border-primary mt-6"
+    border-t-[20px] border-b-[20px] border-primary mt-6 max-[450px]:border-t-[10px]
+     max-[450px]:border-b-[10px]"
     >
       <p className="">Follow social media accounts</p>
       <div className="centerUtil gap-10 flex-wrap">
