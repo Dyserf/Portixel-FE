@@ -29,9 +29,10 @@ body {
 
 .cardGrain {
   background: linear-gradient(
-    rgba(#7f7a7a0f 0.06),
-    rgba(#19181887),
-    rgba(#7f7a7a0f 0.06)
+    rgba(25, 24, 24, 1),
+    rgba(127, 122, 122, 0.39),
+    rgba(25, 24, 24, 0.529),
+    rgba(127, 122, 122, 0.059)
   );
   background-size: cover;
   background-repeat: no-repeat;

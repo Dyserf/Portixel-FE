@@ -19,9 +19,10 @@ const HomeSectionFive = () => {
         className="py-20 px-[32px] rounded-[20px] border border-bgCard
        bg-[#19181887] backdrop-blur-[50px] centerUtil gap-[98px]
        w-full max-w-[1278px] max-[1000px]:gap-[52px] max-[850px]:items-start
+        max-[800px]:gap-[25px] max-[600px]:flex-col max-[600px]:py-[38px] max-[600px]:gap-[52px]
        "
       >
-        <div className="max-w-[469px]">
+        <div className="max-w-[469px] max-[800px]:max-w-[250px] max-[600px]:max-w-none">
           <p className="font-bold text-5xl max-[850px]:text-2xl">
             Ready to level up your design game?
           </p>

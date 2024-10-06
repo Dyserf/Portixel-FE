@@ -14,7 +14,7 @@ const FoundersNote = () => {
   return (
     <div
       className=" fixed bottom-[20px] right-[20px] flex flex-col items-end
-    gap-3"
+    gap-3 z-[3]"
     >
       <div
         className="fixed top-0 left-0 min-h-screen h-full w-full z-0 backdrop-blur-md"
@@ -23,9 +23,9 @@ const FoundersNote = () => {
       ></div>
 
       <div
-        className="max-w-[528px] w-[calc(100vw-40px)] max-h-[calc(100vh-95px)] p-7 rounded-[20px]
+        className="max-w-[528px] w-[calc(100vw-40px)] max-h-[calc(100vh-120px)] p-7 rounded-[20px]
          bg-bgCard flex flex-col gap-6 overflow-y-auto overscroll-none text-sm text-textSecondary
-           z-[2] foundersNote"
+         foundersNote z-[3] max-[450px]:px-[19px]"
         style={{ display: display ? "flex" : "none" }}
       >
         <p className="text-white font-bold text-2xl">Yoo! 👋</p>

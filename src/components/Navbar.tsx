@@ -46,7 +46,10 @@ const Navbar = () => {
         </button>
       </div>
 
-      <button className="p-1 rounded-[5px] hidden max-[850px]:block">
+      <button
+        className="p-1 rounded-[5px] hidden max-[850px]:block"
+        onClick={() => {}}
+      >
         <Image alt="Menu" height={40} width={40} src="/icon/burger.svg" />
       </button>
     </nav>
