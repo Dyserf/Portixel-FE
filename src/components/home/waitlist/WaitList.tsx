@@ -1,57 +1,45 @@
 "use client";
 import TabState from "@/utils/TabState";
-import React, { useContext } from "react";
+import React, { MouseEventHandler, useContext } from "react";
 import { FormEvent, useState } from "react";
 import WaitListEmail from "./WaitListEmail";
 import WaitListWallet from "./WaitListWallet";
 import WaitListSuccess from "./WaitListSuccess";
 import { WaitListContext } from "@/utils/Providers";
+import useRequest from "@/utils/useRequest";
 
 const WaitList = () => {
   const [selected, setSelected] = useState(Tabs[0].title);
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [displayCount, setDisplayCount] = useState<null | string>(null);
   const waitlist = useContext(WaitListContext);
+  const { Send } = useRequest();
 
-  const closeWaitList = () => {
+  const closeWaitList: MouseEventHandler<HTMLDivElement> = (e) => {
+    stopPropagation(e);
     waitlist?.setWaitListState(false);
   };
 
   const handleForm = async (e: FormEvent) => {
     e.preventDefault();
-    setError("");
+    waitlist?.setErrorState("");
     setDisplayCount(null);
 
     if (!emailRegex.test(email.trim())) {
-      setError("Invalid email!");
+      waitlist?.setErrorState("Invalid email!");
       return;
     }
 
-    setLoading(true);
-    const data = await fetch(
-      "https://portixel-be.onrender.com/api/waitlist/email-address",
-      {
-        method: "POST",
-        body: JSON.stringify({ email_address: email.trim() }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+    setDisplayCount(
+      (await Send({ path: "email", value: email, setLoading })).result
     );
+  };
 
-    const result = await data.json();
-
-    if (data.status == 201) {
-      setDisplayCount(result.seat);
-      setEmail("");
-    } else {
-      setError(result.message || "Something went wrong!");
-    }
-
-    setLoading(false);
+  const stopPropagation: MouseEventHandler<HTMLDivElement> = (e) => {
+    e.stopPropagation();
+    waitlist?.setErrorState("");
   };
 
   return (
@@ -64,7 +52,7 @@ const WaitList = () => {
         className="flex flex-col items-center bg-[#191818] p-[76px] max-w-[992px] w-[calc(100vw-30px)]
       max-h-[calc(100vh-50px)] border-bgCard rounded-[20px] overflow-y-auto text-center min-oh-[598px]
        max-[500px]:min-h-0 max-[500px]:p-[22px] bg-[url(/gallery/bg.png)]"
-        onClick={(e) => e.stopPropagation()}
+        onClick={stopPropagation}
       >
         {displayCount && <WaitListSuccess displayCount={displayCount} />}
 
@@ -77,13 +65,6 @@ const WaitList = () => {
               hideOnMobile
             />
 
-            <p
-              className="text-red-400 inline-block w-fit
-            fixed top-2 mx-auto bg-bgCard p-2 rounded"
-            >
-              {error}
-            </p>
-
             {selected == Tabs[0].title ? (
               <WaitListEmail
                 email={email}
@@ -92,7 +73,7 @@ const WaitList = () => {
                 loading={loading}
               />
             ) : (
-              <WaitListWallet />
+              <WaitListWallet setDisplayCount={setDisplayCount} />
             )}
 
             <WaitListEmail

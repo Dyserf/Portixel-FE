@@ -16,7 +16,7 @@ const TabState = <T,>({
   return (
     <div
       className={`centerUtil gap-[5px] bg-[#242424] border border-stroke rounded-[5px]
-      py-[6px] px-3 mb-[25px] ${
+      py-[6px] px-[6px] mb-[25px] ${
         hideOnMobile ? "flex max-[500px]:hidden" : ""
       } bg-bgSecondary`}
     >

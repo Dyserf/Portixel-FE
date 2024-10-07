@@ -12,9 +12,21 @@ import { useContext } from "react";
 
 export default function Home() {
   const waitlist = useContext(WaitListContext);
+  const error = waitlist?.errorState;
 
   return (
-    <div className="">
+    <div className="flex flex-col">
+      {error && (
+        <div className="fixed top-2 z-[5] w-full inline-block">
+          <p
+            className="text-red-400 w-fit
+             mx-auto bg-bgCard p-2 rounded "
+          >
+            {error}
+          </p>
+        </div>
+      )}
+
       <HomeSectionOne />
       <HomeSectionTwo />
       <HomeSectionThree />
