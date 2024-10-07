@@ -4,13 +4,21 @@ interface ITabState<T = unknown> {
   Tabs: (T & { title: string })[];
   selected: string;
   setSelected: (data: string) => void;
+  hideOnMobile?: boolean;
 }
 
-const TabState = <T,>({ Tabs, selected, setSelected }: ITabState<T>) => {
+const TabState = <T,>({
+  Tabs,
+  selected,
+  setSelected,
+  hideOnMobile,
+}: ITabState<T>) => {
   return (
     <div
-      className="centerUtil gap-[5px] bg-[#242424] border border-stroke rounded-[5px]
-        py-[6px] px-3 mb-[23px]"
+      className={`centerUtil gap-[5px] bg-[#242424] border border-stroke rounded-[5px]
+      py-[6px] px-3 mb-[25px] ${
+        hideOnMobile ? "flex max-[500px]:hidden" : ""
+      } bg-bgSecondary`}
     >
       {Tabs.map((tab) => (
         <button

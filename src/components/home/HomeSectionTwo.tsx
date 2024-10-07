@@ -11,16 +11,19 @@ const HomeSectionTwo = () => {
     <div className="centerUtil flex-col w-full text-textSecondary px-4">
       <div className="centerUtil mt-[76px] mb-[32px] flex-wrap">
         <p className="font-bold text-base">Customizing to best fit you:</p>
-        <div className="centerUtil max-[550px]:w-screen overflow-x-auto ">
+        <div
+          className="centerUtil max-[600px]:w-screen overflow-x-auto
+         max-[600px]:justify-start"
+        >
           {CustomiseList.map((list, index) => (
-            <div className="centerUtil p-3 gap-3 w-fit" key={list.title}>
+            <div className="centerUtil p-3 gap-3" key={list.title}>
               <span
                 className="bg-bgSecondary inline-block w-[42px] aspect-square 
                 centerUtil rounded-full "
               >
                 {index + 1}
               </span>
-              <p className="text-base font-medium max-[550px]:whitespace-nowrap max-[550px]:break-keep">
+              <p className="text-base font-medium whitespace-nowrap break-keep">
                 {list.title}
               </p>
             </div>
