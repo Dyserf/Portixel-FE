@@ -1,13 +1,13 @@
 "use client";
 import { WaitListContext } from "@/utils/Providers";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 
 const FoundersNote = () => {
   const [display, setDisplay] = useState(false);
   const waitlist = useContext(WaitListContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Wake the server
     fetch("https://portixel-be.onrender.com/");
   }, []);
