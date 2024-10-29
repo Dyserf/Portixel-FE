@@ -45,6 +45,22 @@ body {
   background-clip: text;
 }
 
+.tryNow:is(:hover, :focus) {
+  background: linear-gradient(to right top, #4c6fff, #ae66ff);
+  color: white;
+}
+
+.listSteps:is(:hover, :focus),
+.listSteps.selected {
+  outline: none;
+  background-color: white;
+  color: black;
+
+  span {
+    background-color: #e8e7e7;
+  }
+}
+
 .foundersNote {
   animation: noteAnim 0.2s linear;
 }

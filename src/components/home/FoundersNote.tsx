@@ -19,7 +19,7 @@ const FoundersNote = () => {
   return (
     <div
       className=" fixed bottom-[20px] right-[20px] flex flex-col items-end
-    gap-3 z-[3]"
+    gap-3 z-[10]"
     >
       <div
         className="fixed top-0 left-0 min-h-screen h-full w-full z-0 backdrop-blur-md"

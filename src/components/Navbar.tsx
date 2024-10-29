@@ -16,7 +16,9 @@ const Navbar = () => {
   return (
     <nav
       className="w-full centerUtil justify-between py-5 px-[82px] border-t-[20px]
-     border-primary max-[850px]:px-[42px] max-[400px]:px-[21px] max-[450px]:border-t-[10px]"
+     border-primary max-[850px]:px-[42px] max-[400px]:px-[21px] max-[450px]:border-t-[10px]
+     sticky top-0 z-10 backdrop-blur-md
+     "
     >
       <Link href="">
         <Image
@@ -41,7 +43,8 @@ const Navbar = () => {
         ))}
 
         <button
-          className="px-[22px] py-[10px] rounded-[10px] bg-white text-black font-bold"
+          className="px-[22px] py-[10px] rounded-[10px] bg-white text-black font-bold 
+          transition-none tryNow"
           onClick={openWaitList}
         >
           Try Now
