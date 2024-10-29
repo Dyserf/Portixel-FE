@@ -45,7 +45,7 @@ const WaitList = () => {
   return (
     <div
       className="fixed top-0 left-0 centerUtil min-h-screen h-full w-full
-    backdrop-blur-[15px] bg-[#010101E5] z-[4]"
+    backdrop-blur-[15px] bg-[#010101E5] z-[6]"
       onClick={closeWaitList}
     >
       <div

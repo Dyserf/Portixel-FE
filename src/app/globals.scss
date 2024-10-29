@@ -65,6 +65,15 @@ body {
   animation: noteAnim 0.2s linear;
 }
 
+.swiper {
+  width: 100%;
+
+  img {
+    width: auto;
+    height: auto;
+  }
+}
+
 @keyframes noteAnim {
   from {
     scale: 0.7;

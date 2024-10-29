@@ -10,9 +10,13 @@ const FoundersNote = () => {
   useLayoutEffect(() => {
     // Wake the server
     fetch("https://portixel-be.onrender.com/");
+    setTimeout(() => {
+      setDisplay(true);
+    }, 5000);
   }, []);
 
   const openWaitList = () => {
+    setDisplay(false);
     waitlist?.setWaitListState(true);
   };
 
@@ -22,7 +26,7 @@ const FoundersNote = () => {
     gap-3 z-[10]"
     >
       <div
-        className="fixed top-0 left-0 min-h-screen h-full w-full z-0 backdrop-blur-md"
+        className="fixed top-0 left-0 min-h-screen h-full w-full z-0"
         style={{ display: display ? "block" : "none" }}
         onClick={() => setDisplay(false)}
       ></div>

@@ -1,4 +1,9 @@
 import Image from "next/image";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const HomeSectionThree = () => {
   return (
@@ -13,7 +18,7 @@ const HomeSectionThree = () => {
         className="grid grid-cols-2 gap-5 h-fit max-[550px]:-mt-[3px] -mt-5 
       max-[550px]:grid-cols-1 z-[3]"
       >
-        {Portfolios.map((card) => (
+        {Portfolios.map((card, index1) => (
           <div
             key={card.title}
             className="w-full max-w-[314px] h-full rounded-xl py-[27px] px-[15px] text-center
@@ -24,13 +29,24 @@ const HomeSectionThree = () => {
               {card.body}
             </p>
 
-            <Image
-              alt=""
-              width={284}
-              height={183}
-              src={card.img}
-              className="mt-auto"
-            />
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              loop={true}
+              autoplay={{
+                delay: 1000,
+                disableOnInteraction: false,
+              }}
+              centeredSlides={true}
+              modules={[Autoplay, Navigation]}
+              className="mySwiper mt-auto"
+            >
+              {card.images.map((image, index2) => (
+                <SwiperSlide key={`${image.title}${index1}${index2}`}>
+                  <Image alt="" width={284} height={183} src={image.title} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         ))}
       </div>
@@ -44,11 +60,21 @@ const Portfolios = [
   {
     title: "Individual Portfolio",
     body: "For creatives, customize, organize, and share your portfolio with ease—letting your creativity shine while AI handles the rest. Start crafting your standout portfolio today!",
-    img: "/template/image1.png",
+    images: [
+      { title: "/template/image1.png" },
+      { title: "/template/image1.png" },
+      { title: "/template/image1.png" },
+      { title: "/template/image1.png" },
+    ],
   },
   {
     title: "Agency Portfolio",
     body: "Showcase your team's projects, collaborate with ease, present polished results, and impress clients—without the usual hassle.",
-    img: "/template/image1.png",
+    images: [
+      { title: "/template/image1.png" },
+      { title: "/template/image1.png" },
+      { title: "/template/image1.png" },
+      { title: "/template/image1.png" },
+    ],
   },
 ];
